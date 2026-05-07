@@ -32,7 +32,7 @@ export default function LandingPage() {
     {
       id: "lab" as const,
       title: "Laboratory",
-      description: "Directly upload test results to patient vaults with end-to-end encryption.",
+      description: "Directly upload test results to patient vaults.",
       icon: FlaskConical,
       color: "text-amber-600",
       bgColor: "bg-amber-50",
@@ -105,7 +105,7 @@ export default function LandingPage() {
               <Icon className={`h-6 w-6 ${roleInfo?.color}`} />
               <span className={`font-bold ${roleInfo?.color} uppercase tracking-tight`}>{roleInfo?.title} Portal</span>
             </div>
-            
+
             <div className="flex justify-center p-6 border-b border-t bg-muted/20">
               {selectedRole === "admin" ? (
                 <form onSubmit={handleAdminLogin} className="w-full space-y-4">
@@ -151,7 +151,7 @@ export default function LandingPage() {
             <div className="h-8 w-8 bg-blue-600 rounded-lg flex items-center justify-center">
               <Activity className="h-5 w-5 text-white" />
             </div>
-            <span className="font-bold text-xl tracking-tight text-slate-800">HealthChain</span>
+            <span className="font-bold text-xl tracking-tight text-slate-800">Healthify</span>
           </div>
           <div className="flex items-center gap-4 text-xs font-bold text-slate-400">
             <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
@@ -167,10 +167,10 @@ export default function LandingPage() {
             <span className="text-blue-600">Empowering Every Patient.</span>
           </h1>
           <p className="text-xl text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
-            Take total control of your medical identity. End-to-end encrypted health records stored on IPFS, accessible only with your permission.
+            Take total control of your medical identity. Health records stored on IPFS, accessible only with your permission.
           </p>
           <div className="flex flex-wrap justify-center gap-6">
-            {[ "E2E Encrypted", "IPFS Storage", "AI Powered", "HIPAA Compliant" ].map((tag) => (
+            {[ "IPFS Storage", "AI Powered"].map((tag) => (
               <div key={tag} className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-400">
                 <CheckCircle2 className="h-4 w-4 text-green-500" />
                 {tag}
@@ -182,8 +182,8 @@ export default function LandingPage() {
         <section className="container mx-auto px-6 pb-20">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {roles.map((role) => (
-              <Card 
-                key={role.id} 
+              <Card
+                key={role.id}
                 className="border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer group"
                 onClick={() => handleRoleSelect(role.id)}
               >
@@ -213,7 +213,7 @@ export default function LandingPage() {
       </main>
 
       <footer className="border-t border-slate-100 py-10 text-center font-bold text-[10px] text-slate-300 uppercase tracking-[0.2em]">
-        © 2025 HealthChain Network • Decentralized Infrastructure
+        © 2026 Healthify Network • Decentralized Infrastructure
       </footer>
     </div>
   )
