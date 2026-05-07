@@ -15,6 +15,7 @@ import { unwrapAESKey, decryptFile } from "@/lib/crypto"
 import { GrantAccessDialog } from "@/components/patient/grant-access-dialog"
 import { FollowupsTimelineDialog } from "@/components/dashboard/followups-timeline-dialog"
 import { MessageCircle, Calendar, ArrowUpCircle } from "lucide-react"
+import { AISummaryPanel } from "@/components/patient/ai-summary-panel"
 
 export default function PatientDashboard() {
   const router = useRouter()
@@ -250,7 +251,9 @@ export default function PatientDashboard() {
           <GrantAccessDialog onGrantSuccess={loadAllData} />
         </div>
 
-        <Tabs defaultValue="records" className="space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          <div className="lg:col-span-3">
+            <Tabs defaultValue="records" className="space-y-6">
           <TabsList className="bg-muted/50 p-1 rounded-xl">
             <TabsTrigger value="records" className="gap-2 rounded-lg">
               <FileText className="h-4 w-4" /> My Records
@@ -438,7 +441,13 @@ export default function PatientDashboard() {
               </CardContent>
             </Card>
           </TabsContent>
-        </Tabs>
+            </Tabs>
+          </div>
+
+          <div className="lg:col-span-1">
+            <AISummaryPanel records={data.records} />
+          </div>
+        </div>
       </main>
     </div>
   )
